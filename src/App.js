@@ -1,11 +1,25 @@
 import React from 'react';
-import './App.scss';
+import styled from '@emotion/styled';
+
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+`;
+
+const Box = styled.div`
+  width: 200px;
+  height: 200px;
+  background-color: rgb(255, 182, 0);
+  border: 5px solid black;
+`;
 
 function App() {
   return (
-    <div className='app'>
-      <div className='box' />
-    </div>
+    <Container>
+      <Box />
+    </Container>
   );
 }
 
