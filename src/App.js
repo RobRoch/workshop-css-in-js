@@ -21,6 +21,11 @@ const Box = styled.div`
   margin: 30px;
 `;
 
+const CrazyBox = styled(Box)`
+  border-radius: 20px;
+  opacity: 0.7;
+`;
+
 function App() {
   return (
     <Container>
@@ -28,7 +33,9 @@ function App() {
       <Box>
         <Button />
       </Box>
-      <Button />
+      <CrazyBox>
+        <Button />
+      </CrazyBox>
     </Container>
   );
 }
