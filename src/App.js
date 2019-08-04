@@ -34,7 +34,7 @@ function App() {
         <Button />
       </Box>
       <CrazyBox>
-        <Button />
+        <Button isMyPreciousButton={isMyPreciousButton} />
       </CrazyBox>
     </Container>
   );

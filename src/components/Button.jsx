@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 const StyledButton = styled.button`
   width: 100px;
   height: 30px;
-  background: white;
+  background: ${({ isActive }) => (isActive ? 'transparent' : 'white')};
   border: 2px solid black;
   color: black;
   font-weight: 700;
@@ -16,7 +16,8 @@ const StyledButton = styled.button`
   outline: none;
   &:hover {
     border-color: white;
-    background: black;
+    background: ${({ isMyPreciousButton }) =>
+      isMyPreciousButton ? 'red' : 'black'};
     color: white;
   }
 `;
@@ -32,6 +33,15 @@ export default class Button extends Component {
   };
   render() {
     const { isActive } = this.state;
-    return <StyledButton onClick={this.onClick}>Button</StyledButton>;
+    const { isMyPreciousButton } = this.props;
+    return (
+      <StyledButton
+        isMyPreciousButton={isMyPreciousButton}
+        isActive={isActive}
+        onClick={this.onClick}
+      >
+        Button
+      </StyledButton>
+    );
   }
 }
