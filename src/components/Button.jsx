@@ -22,7 +22,16 @@ const StyledButton = styled.button`
 `;
 
 export default class Button extends Component {
+  state = {
+    isActive: false
+  };
+  onClick = () => {
+    this.setState(prevState => ({
+      isActive: !prevState.isActive
+    }));
+  };
   render() {
-    return <StyledButton>Button</StyledButton>;
+    const { isActive } = this.state;
+    return <StyledButton onClick={this.onClick}>Button</StyledButton>;
   }
 }

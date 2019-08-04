@@ -27,9 +27,9 @@ const CrazyBox = styled(Box)`
 `;
 
 function App() {
+  const isMyPreciousButton = true;
   return (
     <Container>
-      <Button />
       <Box>
         <Button />
       </Box>
