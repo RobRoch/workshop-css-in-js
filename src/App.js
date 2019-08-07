@@ -1,7 +1,8 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { globalStyles } from './globalStyles';
-import Button from './components/Button';
+import React from "react";
+import styled from "@emotion/styled";
+import { globalStyles } from "./globalStyles";
+import Button from "./components/Button";
+import { mq } from "./mq";
 
 const Container = styled.div`
   display: flex;
@@ -24,15 +25,15 @@ const Box = styled.div`
 const CrazyBox = styled(Box)`
   border-radius: 20px;
   opacity: 0.7;
+  ${mq({
+    background: ["red", "green", globalStyles.color.orange]
+  })}
 `;
 
 function App() {
   const isMyPreciousButton = true;
   return (
     <Container>
-      <Box>
-        <Button />
-      </Box>
       <CrazyBox>
         <Button isMyPreciousButton={isMyPreciousButton} />
       </CrazyBox>
